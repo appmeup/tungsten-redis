@@ -20,15 +20,17 @@ Or install it yourself as:
 
 ## Usage
 
-Add this line to your `config/tungsten.rb`:
+Add this line to your Tungsten config:
 
 ```ruby
+# config/tungsten.rb
 require 'tungsten/redis'
 ```
 
 Now you can include it in your roles:
 
 ```ruby
+# config/tungsten.rb
 role :app do
   uses :redis
 end
