@@ -11,7 +11,7 @@ library :redis do
 
   phase :install do
     as :root do
-      execute(:rm, '/etc/apt/sources.list.d/dotdeb.org.list')
+      execute(:rm, '/etc/apt/sources.list.d/dotdeb.org.list || true')
       execute(:touch, '/etc/apt/sources.list.d/dotdeb.org.list')
       execute(:echo, '"deb http://packages.dotdeb.org squeeze all" >> /etc/apt/sources.list.d/dotdeb.org.list')
       execute(:echo, '"deb-src http://packages.dotdeb.org squeeze all" >> /etc/apt/sources.list.d/dotdeb.org.list')
@@ -19,6 +19,7 @@ library :redis do
     end
     execute('sudo apt-get update')
     execute('sudo apt-get install -y redis-server')
+    execute('redis-cli shutdown || true')
   end
 
   phase :setup do
