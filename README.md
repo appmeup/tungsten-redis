@@ -46,7 +46,7 @@ Test the lib locally with *Vagrant* using the provided `Vagrantfile`:
 
 Start sending commands:
 
-    $ tungsten start -C lib/tungsten/redis/test_config.rb
+    $ tungsten up -C lib/tungsten/redis/test_config.rb
 
 ## Contributing
 
